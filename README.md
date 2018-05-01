@@ -11,7 +11,7 @@ The MusicHealthDL is the database containing tables of data relating to songs wh
 | ***song_lyric***             | varchar(200)       | 歌詞，為一歌詞檔案路徑                                                                                                |
 | ***song_link***              | varchar(200)       | 歌曲下載連結，為一超連結                                                                                              |
 | ***song_file***              | varchar(200)       | 歌曲檔案，為一歌曲檔案路徑                                                                                            |
-| ***song_class***             | varchar(50)        | 歌曲分類，Example: 歌曲, 演奏, 鋼琴, ...                                                                              |
+| ***music_instrument***       | varchar(50)        | 歌曲樂器分類，Example: song, piano, violin, ...                                                                      |
 | ***song_artist***            | varchar(50)        | 歌曲創作者，Example: 周杰倫                                                                                           |
 | ***song_year***              | char(4)            | 歌曲年代，Example: 2018                                                                                               |
 | ***link_date***              | stamp(0)           | 歌曲連結日期，格式: YYYY-MM-DD <br>Example: 2018-01-01                                                                |
@@ -24,7 +24,7 @@ The MusicHealthDL is the database containing tables of data relating to songs wh
 
 | Name              | Postgres data type | Description                                                                  |
 |-------------------|--------------------|------------------------------------------------------------------------------|
-| ***id***          | int                | 受試者ID，由1開始編號，若同首歌不同檔案來源，則ID不同                        |
+| ***id***          | int                | 受試者ID，由1開始編號                        |
 | ***gender***      | varchar(6)         | 受試者性別，male(M)/female(F)                                                |
 | ***age***         | smallint           | 受試者年紀                                                                   |
 | ***education***   | varchar(20)        | 受試者最高學歷                                                               |
@@ -36,9 +36,27 @@ The MusicHealthDL is the database containing tables of data relating to songs wh
 
 | Name             | Postgres data type | Description                                           |
 |------------------|--------------------|-------------------------------------------------------|
-| ***id***         | int                | 受試者ID，由1開始編號，若同首歌不同檔案來源，則ID不同 |
+| ***id***         | int                | 受試者ID，由1開始編號                                  |
 | ***instrument*** | varchar(50)        | 受試者熟悉樂器                                        |
 | ***years***      | smallint           | 受試者熟悉樂器之學習時間, unit: years                 |
 
-* rank
-* health_info
+* person_rank: 受試者音樂喜好，填寫至少1項，至多3項。若音樂喜好只有1項，第二、三項空格可留白。表格內order = 1, 2, 3
+
+| Name                     | Postgres data type | Description                                           |
+|--------------------------|--------------------|-------------------------------------------------------|
+| ***id***                 | int                | 受試者ID，由1開始編號                                 |
+| ***instrument_(order)*** | varchar(50)        | 受試者喜歡樂器之音樂                                  |
+| ***music_type_(order)*** | varchar(50)        | 受試者喜歡音樂之類型                                  |
+| ***artist_(order)***     | varchar(50)        | 受試者喜歡音樂之創作者                                |
+
+* health_info_static
+* nursing_record
+* questionnaire
+
+| Name                | Postgres data type | Description                               |
+|---------------------|--------------------|-------------------------------------------|
+| ***id***            | int                | 受試者ID，由1開始編號                     |
+| ***ques_bsrs5***    | smallint           | 心情溫度計(BSRS-5)量表，score range: 0-15 |
+| ***ques_mmse***     | smallint           | 簡易智能狀態測驗(MMSE)，score range: 0-30 |
+| ***ques_moca***     | smallint           | 蒙特利爾智能測驗(MoCA)，score range: 0~30 |
+| ***sleep_quality*** | smallint           | 受試者睡眠品質 (量化標準?)                |

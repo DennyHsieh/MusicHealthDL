@@ -49,7 +49,7 @@ The MusicHealthDL is the database containing tables of data relating to songs wh
 | ***music_type_(order)*** | varchar(50)        | 受試者喜歡音樂之類型                                  |
 | ***artist_(order)***     | varchar(50)        | 受試者喜歡音樂之創作者                                |
 
-* health_info_static
+* health_info_static: dynamic, static
 * nursing_record
 * questionnaire
 

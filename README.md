@@ -13,7 +13,7 @@ The MusicHealthDL is the database containing tables of data relating to songs wh
 | ***song_file***                 | varchar(200)       | 歌曲檔案，為一歌曲檔案路徑，由於歌曲有版權問題，此路徑僅作為研究使用                                                  |
 | ***youtube_link***              | varchar(200)       | 歌曲於YouTube下載連結，為一超連結                                                                                     |
 | ***kkbox_link***                | varchar(200)       | 歌曲於KKBOX下載連結，為一超連結                                                                                       |
-| *** song_scenario***            | varchar(50)        | 歌曲應用情境，額外ref說明                                                                                             |
+| ***song_scenario***            | varchar(50)        | 歌曲應用情境，額外ref說明                                                                                             |
 | ***song_artist***               | varchar(50)        | 歌曲創作者，若超過一人則以","隔開。Example: 周杰倫                                                                    |
 | ***song_ifvocal***              | smallint           | 歌曲是否具人聲。若具演唱則為1；純演奏則為0                                                                            |
 | ***vocal_gender***              | smallint           | 歌手性別。男生為0；女生為1；合唱為2                                                                                   |

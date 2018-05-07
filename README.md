@@ -35,7 +35,7 @@ The MusicDatabase.xlsx is the database containing tables of data relating to son
 | ***song_scenario***            | varchar(50)        | 歌曲應用情境。與子項四討論確定後，將會有額外reference說明                                                             |
 | ***song_ifvocal***              | smallint           | 歌曲是否具人聲。若具演唱則為1；純演奏則為0                                                                            |
 | ***vocal_gender***              | smallint           | 歌手性別。男生為0；女生為1；合唱為2                                                                                   |
-| ***vocal_language***            | varchar(50)        | 歌曲語言。以中文表示，若超過一種則以","隔開。目前語言有"中文"、、台語"、"英文"                                           |
+| ***vocal_language***            | varchar(50)        | 歌曲語言。以中文表示，若超過一種則以","隔開。目前語言有"中文"、台語"、"英文"                                           |
 | ***song_type***                 | varchar(50)        | 歌曲類型。與子項四討論確定後，將會有額外reference說明。Example: 搖滾                                                   |
 
 * song_annotation: 歌曲加註內容，此表格等子項一加註方法確定後將補完

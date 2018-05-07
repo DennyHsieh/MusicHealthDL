@@ -18,7 +18,7 @@ The MusicDatabase.xlsx is the database containing tables of data relating to son
 |---------------------------------|--------------------|-----------------------------------------------------------------------------------------------------------------------|
 | ***song_id***                   | int                | 歌曲ID，由1開始編號，若同首歌不同檔案來源，則ID不同                                                                   |
 | ***song_lyric***                | varchar(200)       | 歌詞，為一歌詞檔案路徑。格式: song_id + "-" + song_name，其中song_id為7位數。 <br>Example: 0000001-明日天涯.lyrc      |
-| ***song_file***                 | varchar(200)       | 歌曲檔案，為一歌曲檔案路徑。格式: song_id + "-" + song_name。由於歌曲有版權問題，此路徑僅作為研究使用 <br>Example: 0000001-明日天涯.mp3 |
+| ***song_file***                 | varchar(200)       | 歌曲檔案，為一歌曲檔案路徑。格式: song_id + "-" + song_name，其中song_id為7位數。由於歌曲有版權問題，此路徑僅作為研究使用 <br>Example: 0000001-明日天涯.mp3 |
 | ***youtube_link***              | varchar(200)       | 歌曲於YouTube下載連結，為一超連結                                                                                     |
 | ***kkbox_link***                | varchar(200)       | 歌曲於KKBOX下載連結，為一超連結                                                                                       |
 | ***youtube_date***              | stamp(0)           | 歌曲於YouTube上傳日期，格式: YYYY-MM-DD <br>Example: 2018-01-01                                                       |

@@ -21,7 +21,7 @@ The MusicDatabase.xlsx is the database containing tables of data relating to son
 | ***song_file***                 | varchar(200)       | 歌曲檔案，為一歌曲檔案路徑。格式: song_id + "-" + song_name。由於歌曲有版權問題，此路徑僅作為研究使用 <br>Example: 0000001-明日天涯.mp3 |
 | ***youtube_link***              | varchar(200)       | 歌曲於YouTube下載連結，為一超連結                                                                                     |
 | ***kkbox_link***                | varchar(200)       | 歌曲於KKBOX下載連結，為一超連結                                                                                       |
-| ***youtube_date***              | stamp(0)           | 歌曲於YouTube連結日期，格式: YYYY-MM-DD <br>Example: 2018-01-01                                                       |
+| ***youtube_date***              | stamp(0)           | 歌曲於YouTube上傳日期，格式: YYYY-MM-DD <br>Example: 2018-01-01                                                       |
 | ***youtube_lastretrieve_date*** | stamp(0)           | 歌曲於YouTube最後擷取日期，格式: YYYY-MM-DD                                                                           |
 | ***kkbox_lastretrieve_date***   | stamp(0)           | 歌曲於KKBOX最後擷取日期，格式: YYYY-MM-DD                                                                             |
 | ***song_version***              | varchar(200)       | 專輯歌曲版本，Example: 國語懷舊金曲3                                                                                  |
@@ -35,7 +35,7 @@ The MusicDatabase.xlsx is the database containing tables of data relating to son
 | ***song_scenario***            | varchar(50)        | 歌曲應用情境。與子項四討論確定後，將會有額外reference說明                                                             |
 | ***song_ifvocal***              | smallint           | 歌曲是否具人聲。若具演唱則為1；純演奏則為0                                                                            |
 | ***vocal_gender***              | smallint           | 歌手性別。男生為0；女生為1；合唱為2                                                                                   |
-| ***vocal_language***            | varchar(50)        | 歌曲語言。以中文表示，若超過一種則以","隔開                                                                           |
+| ***vocal_language***            | varchar(50)        | 歌曲語言。以中文表示，若超過一種則以","隔開。目前語言有"中文"、、台語"、"英文"                                           |
 | ***song_type***                 | varchar(50)        | 歌曲類型。與子項四討論確定後，將會有額外reference說明。Example: 搖滾                                                   |
 
 * song_annotation: 歌曲加註內容，此表格等子項一加註方法確定後將補完

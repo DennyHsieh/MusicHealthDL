@@ -86,6 +86,21 @@ The MusicDatabase.xlsx is the database containing tables of data relating to son
 | ***sleep_quality*** | varchar(200)       | 受試者睡眠品質，為一檔案路徑，格式: sleepqua + "_" + id + "_" + song_id + "_" + date <br>Example: sleepqua_0001_0000001_20180101120000 |
 
 * nursing_record_static: 生理量測靜態資訊。
+| **Name**         | **Postgres data type** | **Description**                                                                                                                         |
+| ---------------- | ---------------------- | --------------------------------------------------------------------------------------------------------------------------------------- |
+| ***date***       | stamp(0)               | 資料紀錄時間點，格式: YYYYMMDDHHMMSS。Example: 20180101120000                                                                                      |
+| ***id***         | int                    | 受試者ID                                                                                                                                   |
+| ***song_id***    | int                    | 受試者受測歌曲ID                                                                                                                               |
+| ***song_start*** | stamp(0)               | 生理資料開始量測時之歌曲時間，格式: MM:SS。Example: 00:20                                                                                                 |
+| ***song_end***   | stamp(0)               | 生理資料結束量測時之歌曲時間，格式: MM:SS。Example: 03:50                                                                                                 |
+| ***scr***        | varchar(200)           | 膚電值(skin conductance responce)，為一檔案路徑，格式: scr + "_" **+ **id **+ "_" + song_id + "_" + date。
+Example: scr_0001_0000001_20180101120000   |
+| ***hrv***        | varchar(200)           | 心跳變異率(heart rate variability)，為一檔案路徑，格式: hrv + "_" **+ **id **+ "_" + song_id + "_" + date。
+Example: hrv_0001_0000001_20180101120000    |
+| ***fer***        | varchar(200)           | 臉部情緒辨識(face emotion recognition)，為一檔案路徑，格式: fer + "_" **+ **id **+ "_" + song_id + "_" + date。
+Example: fer_0001_0000001_20180101120000 |
+| ***sp***         | varchar(200)           | 站姿壓力(standing pressure)資料，為一檔案路徑，格式: sp + "_" **+ **id **+ "_" + song_id + "_" + date。
+Example: fer_0001_0000001_20180101120000         |
 
 * questionnaire: 問卷結果與睡眠品質
 

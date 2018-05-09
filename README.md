@@ -86,6 +86,7 @@ The MusicDatabase.xlsx is the database containing tables of data relating to son
 | ***sleep_quality*** | varchar(200)       | 受試者睡眠品質，為一檔案路徑，格式: sleepqua "-" + id + "-" + song_id + "-" + date <br>Example: sleepqua-0001-0000001-20180101120000 |
 
 * nursing_record_static: 生理量測靜態資訊。
+
 | Name             | Postgres data type | Description                                                                                                                                          |
 |------------------|--------------------|------------------------------------------------------------------------------------------------------------------------------------------------------|
 | ***date***       | stamp(0)           | 資料紀錄時間點，格式: YYYYMMDDHHMMSS。Example: 20180101120000                                                                                        |

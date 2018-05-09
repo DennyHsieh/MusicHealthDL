@@ -72,8 +72,10 @@ The MusicDatabase.xlsx is the database containing tables of data relating to son
 | ***id***     | int                | 受試者ID，由1開始編號                 |
 | ***artist*** | varchar(50)        | 受試者喜歡之歌手                      |
 
-* health_info_static: dynamic, static資料，此項與子項三討論確定後，將會有額外reference說明
-* nursing_record: 此項與子項三討論確定後，將會有額外reference說明
+* nursing_record_dynamic: 生理量測動態資訊。
+
+* nursing_record_static: 生理量測靜態資訊。
+
 * questionnaire: 問卷結果與睡眠品質
 
 | Name                | Postgres data type | Description                               |

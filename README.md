@@ -74,33 +74,29 @@ The MusicDatabase.xlsx is the database containing tables of data relating to son
 
 * nursing_record_dynamic: 生理量測動態資訊。
 
-| Name                | Postgres data type | Description                                                                                                                            |
-|---------------------|--------------------|----------------------------------------------------------------------------------------------------------------------------------------|
-| ***date***          | stamp(0)           | 資料紀錄時間點，格式: YYYYMMDDHHMMSS。Example: 20180101120000                                                                          |
-| ***id***            | int                | 受試者ID                                                                                                                               |
-| ***song_id***       | int                | 受試者受測歌曲ID                                                                                                                       |
-| ***song_start***    | stamp(0)           | 生理資料開始量測時之歌曲時間，格式: MM:SS。Example: 00:20                                                                              |
-| ***song_end***      | stamp(0)           | 生理資料結束量測時之歌曲時間，格式: MM:SS。Example: 03:50                                                                              |
-| ***heart_rate***    | varchar(200)       | 心率紀錄，為一檔案路徑，格式: heartrate + "_" + id + "_" + song_id + "_" + date <br>Example: heartrate_0001_0000001_20180101120000     |
-| ***activity***      | varchar(200)       | 活動紀錄，為一檔案路徑，格式: activity + "_" + id + "_" + song_id + "_" + date <br>Example: activity_0001_0000001_20180101120000       |
-| ***sleep_quality*** | varchar(200)       | 受試者睡眠品質，為一檔案路徑，格式: sleepqua + "_" + id + "_" + song_id + "_" + date <br>Example: sleepqua_0001_0000001_20180101120000 |
+| Name                | Postgres data type | Description                                                                                                                          |
+|---------------------|--------------------|--------------------------------------------------------------------------------------------------------------------------------------|
+| ***date***          | stamp(0)           | 資料紀錄時間點，格式: YYYYMMDDHHMMSS。Example: 20180101120000                                                                        |
+| ***id***            | int                | 受試者ID                                                                                                                             |
+| ***song_id***       | int                | 受試者受測歌曲ID                                                                                                                     |
+| ***song_start***    | stamp(0)           | 生理資料開始量測時之歌曲時間，格式: MM:SS。Example: 00:20                                                                            |
+| ***song_end***      | stamp(0)           | 生理資料結束量測時之歌曲時間，格式: MM:SS。Example: 03:50                                                                            |
+| ***heart_rate***    | varchar(200)       | 心率紀錄，為一檔案路徑，格式: heartrate + "-" + id + "-" + song_id + "-" + date <br>Example: heartrate-0001-0000001-20180101120000   |
+| ***activity***      | varchar(200)       | 活動紀錄，為一檔案路徑，格式: activity + "-" + id + "-" + song_id + "-" + date <br>Example: activity-0001-0000001-20180101120000     |
+| ***sleep_quality*** | varchar(200)       | 受試者睡眠品質，為一檔案路徑，格式: sleepqua "-" + id + "-" + song_id + "-" + date <br>Example: sleepqua-0001-0000001-20180101120000 |
 
 * nursing_record_static: 生理量測靜態資訊。
-| **Name**         | **Postgres data type** | **Description**                                                                                                                         |
-| ---------------- | ---------------------- | --------------------------------------------------------------------------------------------------------------------------------------- |
-| ***date***       | stamp(0)               | 資料紀錄時間點，格式: YYYYMMDDHHMMSS。Example: 20180101120000                                                                                      |
-| ***id***         | int                    | 受試者ID                                                                                                                                   |
-| ***song_id***    | int                    | 受試者受測歌曲ID                                                                                                                               |
-| ***song_start*** | stamp(0)               | 生理資料開始量測時之歌曲時間，格式: MM:SS。Example: 00:20                                                                                                 |
-| ***song_end***   | stamp(0)               | 生理資料結束量測時之歌曲時間，格式: MM:SS。Example: 03:50                                                                                                 |
-| ***scr***        | varchar(200)           | 膚電值(skin conductance responce)，為一檔案路徑，格式: scr + "_" **+ **id **+ "_" + song_id + "_" + date。
-Example: scr_0001_0000001_20180101120000   |
-| ***hrv***        | varchar(200)           | 心跳變異率(heart rate variability)，為一檔案路徑，格式: hrv + "_" **+ **id **+ "_" + song_id + "_" + date。
-Example: hrv_0001_0000001_20180101120000    |
-| ***fer***        | varchar(200)           | 臉部情緒辨識(face emotion recognition)，為一檔案路徑，格式: fer + "_" **+ **id **+ "_" + song_id + "_" + date。
-Example: fer_0001_0000001_20180101120000 |
-| ***sp***         | varchar(200)           | 站姿壓力(standing pressure)資料，為一檔案路徑，格式: sp + "_" **+ **id **+ "_" + song_id + "_" + date。
-Example: fer_0001_0000001_20180101120000         |
+| Name             | Postgres data type | Description                                                                                                                                          |
+|------------------|--------------------|------------------------------------------------------------------------------------------------------------------------------------------------------|
+| ***date***       | stamp(0)           | 資料紀錄時間點，格式: YYYYMMDDHHMMSS。Example: 20180101120000                                                                                        |
+| ***id***         | int                | 受試者ID                                                                                                                                             |
+| ***song_id***    | int                | 受試者受測歌曲ID                                                                                                                                     |
+| ***song_start*** | stamp(0)           | 生理資料開始量測時之歌曲時間，格式: MM:SS。Example: 00:20                                                                                            |
+| ***song_end***   | stamp(0)           | 生理資料結束量測時之歌曲時間，格式: MM:SS。Example: 03:50                                                                                            |
+| ***scr***        | varchar(200)       | 膚電值(skin conductance responce)，為一檔案路徑，格式: scr + "-" + id + "-" + song_id + "-" + date <br>Example: scr-0001-0000001-20180101120000      |
+| ***hrv***        | varchar(200)       | 心跳變異率(heart rate variability)，為一檔案路徑，格式: hrv + "-" + id + "-" + song_id + "-" + date <br>Example: hrv-0001-0000001-20180101120000     |
+| ***fer***        | varchar(200)       | 臉部情緒辨識(face emotion recognition)，為一檔案路徑，格式: fer + "-" + id + "-" + song_id + "-" + date <br>Example: fer-0001-0000001-20180101120000 |
+| ***sp***         | varchar(200)       | 站姿壓力(standing pressure)資料，為一檔案路徑，格式: sp + "-" + id + "-" + song_id + "-" + date <br>Example: sp-0001-0000001-20180101120000          |
 
 * questionnaire: 問卷結果與睡眠品質
 
@@ -110,3 +106,5 @@ Example: fer_0001_0000001_20180101120000         |
 | ***ques_bsrs5***    | smallint           | 心情溫度計(BSRS-5)量表，score range: 0-15 |
 | ***ques_mmse***     | smallint           | 簡易智能狀態測驗(MMSE)，score range: 0-30 |
 | ***ques_moca***     | smallint           | 蒙特利爾智能測驗(MoCA)，score range: 0~30 |
+
+* 檔案路徑之命名，有使用song_id則增加為7位數(0000001)，id為4位數(0001)

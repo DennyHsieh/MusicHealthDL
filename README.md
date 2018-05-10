@@ -9,7 +9,7 @@ The MusicDatabase.xlsx is the database containing tables of data relating to son
 | ***song_id***                   | int                | 歌曲ID，由1開始編號，若同首歌不同檔案來源，則ID不同                                                                   |
 | ***song_id_kkbox***             |                    | KKBOX歌曲ID，(等6月初洽談後確定資料型式)                                                                              |
 | ***song_name***                 | varchar(50)        | 歌曲名稱，可於歌名後新增副歌名 <br>格式: 歌名+space+(副歌名) <br>Example: Gonna Make You Sweat (Everybody Dance Now)  |
-| ***song_artist***               | varchar(50)        | 歌曲創作者，若超過一人則以","隔開。Example: 周杰倫                                                                    |
+| ***song_artist***               | varchar(50)        | 歌曲創作者，若無人聲則空著，若超過一人則以","隔開。Example: 周杰倫                                                         |
 | ***song_year***                 | char(4)            | 歌曲年代，Example: 2018                                                                                               |
     
 * song_path: 歌曲路徑

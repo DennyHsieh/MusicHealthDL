@@ -10,6 +10,7 @@ The MusicDatabase.xlsx is the database containing tables of data relating to son
 | ***song_id_kkbox***             |                    | KKBOX歌曲ID，(等6月初洽談後確定資料型式)                                                                              |
 | ***song_name***                 | varchar(50)        | 歌曲名稱，可於歌名後新增副歌名 <br>格式: 歌名+space+(副歌名) <br>Example: Gonna Make You Sweat (Everybody Dance Now)  |
 | ***song_artist***               | varchar(50)        | 歌曲創作者，若無人聲則空著，若超過一人則以","隔開。Example: 周杰倫                                                         |
+| ***song_original_artist***      | varchar(50)        | 歌曲原唱，若無人聲則空著，若超過一人則以","隔開。Example: 周杰倫                                                         |
 | ***song_year***                 | char(4)            | 歌曲發行年份，Example: 2018                                                                                           |
     
 * song_path: 歌曲路徑
@@ -24,7 +25,7 @@ The MusicDatabase.xlsx is the database containing tables of data relating to son
 | ***youtube_date***              | stamp(0)           | 歌曲於YouTube上傳日期，格式: YYYY-MM-DD <br>Example: 2018-01-01                                                       |
 | ***youtube_lastretrieve_date*** | stamp(0)           | 歌曲於YouTube最後擷取日期，格式: YYYY-MM-DD                                                                           |
 | ***kkbox_lastretrieve_date***   | stamp(0)           | 歌曲於KKBOX最後擷取日期，格式: YYYY-MM-DD                                                                             |
-| ***song_version***              | varchar(200)       | 專輯歌曲版本，Example: 國語懷舊金曲3                                                                                  |
+| ***song_album***                | varchar(200)       | 歌曲專輯，Example: 國語懷舊金曲3                                                                                  |
 | ***song_version_company***      | varchar(200)       | 專輯歌曲發行公司，Example: 威森影視事業有限公司                                                                       |
 
 * song_feature: 歌曲特徵

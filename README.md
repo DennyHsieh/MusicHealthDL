@@ -83,30 +83,22 @@ The dataset is the database containing tables of data relating to songs which ar
     - Common metadata for annotation(12) 
 
 | **Million song dataset**       | **LIBROSA**                      |                                              |  |
-| ------------------------------ | -------------------------------- | -------------------------------------------- |  |
-| **analysis_sample_rate**       | ***sr***                         | 取樣速率                                         |  |
-| **beats_start**                | ***beat_time***                  | 拍子開始時間點                                      |  |
-| **duration**                   | ***duration***                   | 歌曲長度                                         |  |
-| **key**                        | ***key***                        | 歌曲音調                                         |  |
-| **mode**                       | ***mode***                       | 歌曲調式                                         |  |
-| **segments_start**             | ***segment_time***               | 音樂事件(onset)的開始時間點                            |  |
-| **segments_loudness_max**      | ***segments_loudness_max***      | max loudness during each segment             |  |
-| **segments_loudness_max_time** | ***segments_loudness_max_time*** | time of the max loudness during each segment |  |
-| **segments_loudness_start**    | ***segments_loudness_start***    |                                              |  |
-| **segments_pitches**           | ***pitch***                      | 歌曲音高                                         |  |
-| **segments_timbre**            | ***mfcc***                       | 歌曲梅爾頻率倒譜係數                                   |  |
-| **tempo**                      | ***tempo***                      | 歌曲拍速                                         |  |
+| ------------------------------ | -------------------------------- | -------------------------------------------- |
+| **analysis_sample_rate**       | ***sr***                         | 取樣速率                                         |
+| **beats_start**                | ***beat_time***                  | 拍子開始時間點                                      |
+| **duration**                   | ***duration***                   | 歌曲長度                                         |
+| **key**                        | ***key***                        | 歌曲音調                                         |
+| **mode**                       | ***mode***                       | 歌曲調式                                         |
+| **segments_start**             | ***segment_time***               | 音樂事件(onset)的開始時間點                       |
+| **segments_loudness_max**      | ***segments_loudness_max***      | max loudness during each segment             |
+| **segments_loudness_max_time** | ***segments_loudness_max_time*** | time of the max loudness during each segment |
+| **segments_loudness_start**    | ***segments_loudness_start***    |                                              |
+| **segments_pitches**           | ***pitch***                      | 歌曲音高                                         |
+| **segments_timbre**            | ***mfcc***                       | 歌曲梅爾頻率倒譜係數                              |
+| **tempo**                      | ***tempo***                      | 歌曲拍速                                         |
 
     - Common metadata but already appear in other tables(8):
-
-|                                                   |                     |
-| ------------------------------------------------- | ------------------- |
-| **artist_name**                                   | ***song_name***     |
-| **release**                                       | ***album_version*** |
-| **artist_playmeid, release_7digitalid, track_id** | ***kkbox_id***      |
-| **song_id**                                       | ***song_id***       |
-| **title**                                         | ***song_name***     |
-| **year**                                          | ***song_year***     |
+        artist_name(song_name), release(album_version), artist_playmeid, release_7digitalid, track_id(kkbox_id), song_id(song_id), title(song_name), year(song_year)
 
     - Not useful for annotation(35): 
       artist_7digitalid, artist_familiarity, artist_hotttnesss, artist_id, artist_latitude, artist_location, artist_longitude, artist_mbid, artist_mbtags, artist_mbtags_count, artist_terms, artist_terms_freq, artist_terms_weight, audio_md5, bars_confidence, bars_start, beats_confidence, ****danceability, end_of_fade_in, energy, key_confidence, loudness, mode_confidence, num_songs, sections_confidence, sections_start, segments_confidence, similar_artists, song_hotttnesss**,** start_of_fade_out, ****tatums_confidence, ****tatums_start, time_signature, time_signature_confidence, track_7digitalid
@@ -114,6 +106,7 @@ The dataset is the database containing tables of data relating to songs which ar
 
 - song_annotation_compute: 歌曲音樂特徵之音樂專家加註，使用Sonic Visualiser加註。
   - 加註細節與Demo寫於[SOP](https://github.com/DennyHsieh/annotation-expert)
+  - Reference: [SALAMI annotation guide](http://www.music.mcgill.ca/~jordan/salami/SALAMI-Annotator-Guide.pdf)
 
 | **Name**             | **Data type** | **Description**                  |
 | -------------------- | ------------- | -------------------------------- |
@@ -127,7 +120,6 @@ The dataset is the database containing tables of data relating to songs which ar
 | ***serial_number***  | varchar(50)   | 歌曲流水號，判斷第幾人次加註                   |
 | ***sv***             | varchar(50)   | Sonic Visualiser工作檔              |
 
-  - Reference: [SALAMI annotation guide](http://www.music.mcgill.ca/~jordan/salami/SALAMI-Annotator-Guide.pdf)
 
 
 * person_info: 受試者基本背景資訊

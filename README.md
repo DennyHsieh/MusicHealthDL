@@ -82,20 +82,20 @@ The dataset is the database containing tables of data relating to songs which ar
   - Reference: Annotation between **Million song dataset** ([reference](https://labrosa.ee.columbia.edu/millionsong/pages/example-track-description), [paper](http://ismir2011.ismir.net/papers/OS6-1.pdf)) and **LIBROSA**
     - Common metadata for annotation(12) 
 
-| **Million song dataset**       | **LIBROSA**                      |                                              |  |
-| ------------------------------ | -------------------------------- | -------------------------------------------- |
-| **analysis_sample_rate**       | ***sr***                         | 取樣速率                                         |
-| **beats_start**                | ***beat_time***                  | 拍子開始時間點                                      |
-| **duration**                   | ***duration***                   | 歌曲長度                                         |
-| **key**                        | ***key***                        | 歌曲音調                                         |
-| **mode**                       | ***mode***                       | 歌曲調式                                         |
-| **segments_start**             | ***segment_time***               | 音樂事件(onset)的開始時間點                       |
-| **segments_loudness_max**      | ***segments_loudness_max***      | max loudness during each segment             |
-| **segments_loudness_max_time** | ***segments_loudness_max_time*** | time of the max loudness during each segment |
-| **segments_loudness_start**    | ***segments_loudness_start***    |                                              |
-| **segments_pitches**           | ***pitch***                      | 歌曲音高                                         |
-| **segments_timbre**            | ***mfcc***                       | 歌曲梅爾頻率倒譜係數                              |
-| **tempo**                      | ***tempo***                      | 歌曲拍速                                         |
+| **Million song dataset**   | **LIBROSA**                |
+| -------------------------- | -------------------------- |
+| analysis_sample_rate       | sr                         |
+| beats_start                | beat_time                  |
+| duration                   | duration                   |
+| key                        | key                        |
+| mode                       | mode                       |
+| segments_start             | segment_time               |
+| segments_loudness_max      | segments_loudness_max      |
+| segments_loudness_max_time | segments_loudness_max_time |
+| segments_loudness_start    | segments_loudness_start    |
+| segments_pitches           | pitch                      |
+| segments_timbre            | mfcc                       |
+| tempo                      | tempo                      |
 
     - Common metadata but already appear in other tables(8):
         artist_name(song_name), release(album_version), artist_playmeid, release_7digitalid, track_id(kkbox_id), song_id(song_id), title(song_name), year(song_year)

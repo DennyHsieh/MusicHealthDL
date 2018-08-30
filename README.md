@@ -39,72 +39,61 @@ The dataset is the database containing tables of data relating to songs which ar
 | ***song_type***                 | varchar(50)        | 歌曲類型。與子項四討論確定後，將會有額外reference說明。Example: 搖滾                                                   |
 
 
-- song_annotation_compute: 歌曲音樂特徵加註，使用Python內librosa, madmom之library與MATLAB之MIRtoolbox分析。
-  - 為了資料科學之方便使用，原則能從librosa與madmom提取之特徵優先使用，但部分音樂特徵於電腦計算分析有盲點，因此這些特徵將使用過去的工具MIRtoolbox。
+- song_annotation_compute: 歌曲音樂特徵加註，使用Python內librosa, madmom之library分析。
+  - 為了資料科學之方便使用，原則能從librosa與madmom提取之特徵優先使用，但部分音樂特徵於電腦計算分析有盲點，因此這些特徵將使用過去的工具MIRtoolbox(metadata於下一項)。
   - 以下檔案除song_id外，其他音樂特徵皆為檔名，檔名為: “song_id” + “-” + “annotation_feature” + “.副檔名”
 
-  - LIBROSA
-
-| **Name**        | **Data type** | **Description**              |
-| --------------- | ------------- | ---------------------------- |
-| ***song_id***   | int           | 歌曲ID，由1開始編號，若同首歌不同檔案來源，則ID不同 |
-| ***sr***        | varchar(50)   | 取樣速率                         |
-| ***beat_time*** | varchar(50)   | 拍子時間點                        |
-| ***duration***  | varchar(50)   | 歌曲長度                         |
-| ***mfcc***      | varchar(50)   | 歌曲梅爾頻率倒譜係數                   |
-| ***tempo***     | varchar(50)   | 歌曲拍速                         |
-
-
-  - madmom
-
-| **Name**                         | **Data type** | **Description**              |
-| -------------------------------- | ------------- | ---------------------------- |
-| ***song_id***                    | int           | 歌曲ID，由1開始編號，若同首歌不同檔案來源，則ID不同 |
-| ***key***                        | varchar(50)   | 歌曲音調                         |
-| ***segments_time***              | varchar(50)   | 音樂事件(onset)的開始時間點            |
-| ***segments_loudness_max***      | varchar(50)   | 歌曲段落音量最大值                    |
-| ***segments_loudness_max_time*** | varchar(50)   | 歌曲段落音量最大值之時間                 |
-| ***segments_loudness_start***    | varchar(50)   | 歌曲段落音量最大值之開始時間               |
-| ***mfcc***                       | varchar(50)   | 歌曲梅爾頻率倒譜係數                   |
-| ***tempo***                      | varchar(50)   | 歌曲拍速                         |
+| **Name**                 | **Data type** | **Description**              |
+| ------------------------ | ------------- | ---------------------------- |
+| ***song_id***            | int           | 歌曲ID，由1開始編號，若同首歌不同檔案來源，則ID不同 |
+| ***librosa_beat_times*** | varchar(50)   | 拍子開始時間點                      |
+| ***librosa_chromagram*** | varchar(50)   | 歌曲色度圖譜                       |
+| ***librosa_duration***   | varchar(50)   | 歌曲長度                         |
+| ***librosa_mfcc***       | varchar(50)   | 歌曲梅爾頻率倒譜係數                   |
+| ***librosa_onset***      | varchar(50)   | 歌曲音符開始點(librosa)             |
+| ***librosa_sr***         | varchar(50)   | 取樣速率                         |
+| ***librosa_tempo***      | varchar(50)   | 歌曲拍速                         |
+| ***madmom_onset***       | varchar(50)   | 歌曲音符開始點(madmom)              |
 
 
-  - MIRtoolbox
+- song_annotation_compute_mirtoolbox: 歌曲音樂特徵加註，使用MATLAB之MIRtoolbox分析。
 
-| **Name**         | **Data type** | **Description**              |
-| ---------------- | ------------- | ---------------------------- |
-| ***song_id***    | int           | 歌曲ID，由1開始編號，若同首歌不同檔案來源，則ID不同 |
-| ***mirmode***    | varchar(50)   | 歌曲調式                         |
-| ***mirpitch***   | varchar(50)   | 歌曲音高(multiple)               |
-| ***miremotion*** | varchar(50)   | 歌曲情緒                         |
+| **Name**              | **Data type** | **Description**              |
+| --------------------- | ------------- | ---------------------------- |
+| ***song_id***         | int           | 歌曲ID，由1開始編號，若同首歌不同檔案來源，則ID不同 |
+| ***mirbrightness***   | varchar(50)   | 歌曲響度(statistic result)       |
+| ***mirbrightness_r*** | varchar(50)   | 歌曲響度                         |
+| ***mirchromagram***   | varchar(50)   | 歌曲色度圖譜                       |
+| ***mirkey***          | varchar(50)   | 歌曲音調(statistic result)       |
+| ***mirkey_r***        | varchar(50)   | 歌曲音調                         |
+| ***mirmode***         | varchar(50)   | 歌曲調式(statistic result)       |
+| ***mirmode_r***       | varchar(50)   | 歌曲調式                         |
+| ***mirpitch***        | varchar(50)   | 歌曲音高(mono)                   |
 
 
-  - Reference: Annotation between **Million song dataset** ([reference](https://labrosa.ee.columbia.edu/millionsong/pages/example-track-description), [paper](http://ismir2011.ismir.net/papers/OS6-1.pdf)) and **LIBROSA**
-    - Common metadata for annotation(12) 
-
-| **Million song dataset**   | **LIBROSA**                |
-| -------------------------- | -------------------------- |
-| analysis_sample_rate       | sr                         |
-| beats_start                | beat_time                  |
-| duration                   | duration                   |
-| key                        | key                        |
-| mode                       | mode                       |
-| segments_start             | segment_time               |
-| segments_loudness_max      | segments_loudness_max      |
-| segments_loudness_max_time | segments_loudness_max_time |
-| segments_loudness_start    | segments_loudness_start    |
-| segments_pitches           | pitch                      |
-| segments_timbre            | mfcc                       |
-| tempo                      | tempo                      |
+- Reference: Annotation between **Million song dataset** ([reference](https://labrosa.ee.columbia.edu/millionsong/pages/example-track-description), [paper](http://ismir2011.ismir.net/papers/OS6-1.pdf)) and **LIBROSA**
+  - Common metadata for annotation(10) 
+| **Million song dataset** | **MHCDL-Database**                          |
+| ------------------------ | ------------------------------------------- |
+| analysis_sample_rate     | librosa_sr                                  |
+| beats_start              | librosa_beat_times                          |
+| duration                 | librosa_duration                            |
+| key                      | mirkey, mirkey_r                            |
+| mode                     | mirmode, mirmode_r                          |
+| segments_start           | librosa_onset, madmom_onset                 |
+| segments_loudness_max    | mirbrightness, mirbrightness_r              |
+| segments_pitches         | librosa_chromagram, mirchromagram, mirpitch |
+| segments_timbre          | librosa_mfcc                                |
+| tempo                    | librosa_tempo                               |
 
     - Common metadata but already appear in other tables(8):
-        artist_name(song_name), release(album_version), artist_playmeid, release_7digitalid, track_id(kkbox_id), song_id(song_id), title(song_name), year(song_year)
+      artist_name(song_name), release(album_version), artist_playmeid, release_7digitalid, track_id(kkbox_id), song_id(song_id), title(song_name), year(song_year)
 
-    - Not useful for annotation(35): 
-      artist_7digitalid, artist_familiarity, artist_hotttnesss, artist_id, artist_latitude, artist_location, artist_longitude, artist_mbid, artist_mbtags, artist_mbtags_count, artist_terms, artist_terms_freq, artist_terms_weight, audio_md5, bars_confidence, bars_start, beats_confidence, ****danceability, end_of_fade_in, energy, key_confidence, loudness, mode_confidence, num_songs, sections_confidence, sections_start, segments_confidence, similar_artists, song_hotttnesss**,** start_of_fade_out, ****tatums_confidence, ****tatums_start, time_signature, time_signature_confidence, track_7digitalid
+    - Not useful for annotation(37): 
+      artist_7digitalid, artist_familiarity, artist_hotttnesss, artist_id, artist_latitude, artist_location, artist_longitude, artist_mbid, artist_mbtags, artist_mbtags_count, artist_terms, artist_terms_freq, artist_terms_weight, audio_md5, bars_confidence, bars_start, beats_confidence, danceability, end_of_fade_in, energy, key_confidence, loudness, mode_confidence, num_songs, sections_confidence, sections_start, segments_confidence, segments_loudness_max_time, segments_loudness_start, similar_artists, song_hotttnesss, start_of_fade_out, tatums_confidence, tatums_start, time_signature, time_signature_confidence, track_7digitalid
 
 
-- song_annotation_compute: 歌曲音樂特徵之音樂專家加註，使用Sonic Visualiser加註。
+- song_annotation_expert: 歌曲音樂特徵之音樂專家加註，使用Sonic Visualiser加註。
   - 加註細節與Demo寫於[SOP](https://github.com/DennyHsieh/annotation-expert)
   - Reference: [SALAMI annotation guide](http://www.music.mcgill.ca/~jordan/salami/SALAMI-Annotator-Guide.pdf)
 
@@ -142,7 +131,7 @@ The dataset is the database containing tables of data relating to songs which ar
 | ***instrument*** | varchar(50)        | 受試者熟悉樂器                                        |
 | ***years***      | smallint           | 受試者熟悉樂器之學習時間, unit: years                 |
 
-* person_artistprefer: 受試者歌手喜好。
+* person_artist_prefer: 受試者歌手喜好。
 
 | Name         | Data type | Description                          |
 |--------------|--------------------|--------------------------------------|

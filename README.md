@@ -71,7 +71,8 @@ The dataset is the database containing tables of data relating to songs which ar
 | ***mirpitch***        | varchar(50)   | 歌曲音高(mono)                   |
 
 
-- Reference: Annotation between **Million song dataset** ([reference](https://labrosa.ee.columbia.edu/millionsong/pages/example-track-description), [paper](http://ismir2011.ismir.net/papers/OS6-1.pdf)) and **LIBROSA**
+- Reference: Annotation between **Million song dataset** ([reference](https://labrosa.ee.columbia.edu/millionsong/pages/example-track-description), [paper](http://ismir2011.ismir.net/papers/OS6-1.pdf)) and **LIBROSA**, **madmom**, **MIRtoolbox**
+
   - Common metadata for annotation(10) 
 | **Million song dataset** | **MHCDL-Database**                          |
 | ------------------------ | ------------------------------------------- |
